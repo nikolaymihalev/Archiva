@@ -5,6 +5,10 @@ VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archiva.API", "Archiva.API\Archiva.API.csproj", "{D3129D43-7633-49B5-B472-0D84C7883098}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archiva.Core", "Archiva.Core\Archiva.Core.csproj", "{5A91EC86-3C98-4E1C-9EF9-BF613B63E176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archiva.Infrastructure", "Archiva.Infrastructure\Archiva.Infrastructure.csproj", "{6FEF4571-117F-406D-8A4D-B52237F49C67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D3129D43-7633-49B5-B472-0D84C7883098}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3129D43-7633-49B5-B472-0D84C7883098}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3129D43-7633-49B5-B472-0D84C7883098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A91EC86-3C98-4E1C-9EF9-BF613B63E176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A91EC86-3C98-4E1C-9EF9-BF613B63E176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A91EC86-3C98-4E1C-9EF9-BF613B63E176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A91EC86-3C98-4E1C-9EF9-BF613B63E176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FEF4571-117F-406D-8A4D-B52237F49C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FEF4571-117F-406D-8A4D-B52237F49C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FEF4571-117F-406D-8A4D-B52237F49C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FEF4571-117F-406D-8A4D-B52237F49C67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
