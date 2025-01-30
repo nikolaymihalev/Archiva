@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Archiva.Infrastructure.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Archiva.Infrastructure.Data
 {
@@ -7,6 +8,8 @@ namespace Archiva.Infrastructure.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         {            
         }
+
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
