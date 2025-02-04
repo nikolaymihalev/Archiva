@@ -10,6 +10,7 @@ namespace Archiva.Infrastructure.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Document> Documents { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
