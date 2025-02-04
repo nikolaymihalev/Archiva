@@ -1,4 +1,5 @@
-﻿using Archiva.Infrastructure.Models;
+﻿using Archiva.Infrastructure.Data.Configurations;
+using Archiva.Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Archiva.Infrastructure.Data
@@ -15,6 +16,8 @@ namespace Archiva.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new UserDocumentConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }

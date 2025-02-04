@@ -47,5 +47,10 @@ namespace Archiva.Infrastructure.Models
         [Required]
         [Comment("Document end date")]
         public DateTime EndDate { get; set; }
+
+        /// <summary>
+        /// Collection of user documents
+        /// </summary>
+        public ICollection<UserDocument> UserDocuments { get; set; } = new List<UserDocument>();
     }
 }

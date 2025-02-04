@@ -43,5 +43,10 @@ namespace Archiva.Infrastructure.Models
         [Required]
         [Comment("User password")]
         public string Password { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Collection of user documents
+        /// </summary>
+        public ICollection<UserDocument> UserDocuments { get; set; } = new List<UserDocument>();
     }
 }
