@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Archiva.Infrastructure.Constants;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace Archiva.Infrastructure.Models
@@ -21,6 +22,7 @@ namespace Archiva.Infrastructure.Models
         /// </summary>
         [Required]
         [Comment("Document name")]
+        [MaxLength(ValidationEntityConstants.DocumentNameMaxLength)]
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
