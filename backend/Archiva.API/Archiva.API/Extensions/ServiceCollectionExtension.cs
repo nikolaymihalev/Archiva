@@ -1,4 +1,5 @@
-﻿using Archiva.Infrastructure.Data;
+﻿using Archiva.Infrastructure.Common;
+using Archiva.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -10,6 +11,8 @@ namespace Microsoft.Extensions.DependencyInjection
             var connectionString = config.GetConnectionString("DefaultConnection") ?? throw new ArgumentException("The connection string was not found!");
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+
+            services.AddScoped<IRepository, Repository>();
 
             return services;
         }
