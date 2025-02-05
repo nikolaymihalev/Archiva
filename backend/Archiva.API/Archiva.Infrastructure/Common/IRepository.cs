@@ -32,6 +32,11 @@ namespace Archiva.Infrastructure.Common
         Task DeleteAsync<T>(object id) where T : class;
 
         /// <summary>
+        /// Delete entity from database
+        /// </summary>
+        void Delete<T>(T entity) where T : class;
+
+        /// <summary>
         /// Get specific entity from database by identifier
         /// </summary>
         Task<T?> GetByIdAsync<T>(object id) where T : class;

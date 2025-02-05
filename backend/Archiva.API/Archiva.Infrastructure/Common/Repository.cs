@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Archiva.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Archiva.Infrastructure.Common
 {
@@ -38,5 +39,17 @@ namespace Archiva.Infrastructure.Common
         public async Task<T?> GetByIdAsync<T>(object id) where T : class => await this.DbSet<T>().FindAsync(id);
 
         public Task<int> SaveChangesAsync() => this.context.SaveChangesAsync();
+
+        public void Delete<T>(T entity) where T : class
+        {
+            EntityEntry entry = this.context.Entry(entity);
+
+            if (entry.State == EntityState.Detached)
+            {
+                this.DbSet<T>().Attach(entity);
+            }
+
+            entry.State = EntityState.Deleted;
+        }
     }
 }
