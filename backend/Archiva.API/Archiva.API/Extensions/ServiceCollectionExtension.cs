@@ -1,4 +1,6 @@
-﻿using Archiva.Infrastructure.Common;
+﻿using Archiva.Core.Conracts;
+using Archiva.Core.Services;
+using Archiva.Infrastructure.Common;
 using Archiva.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +21,8 @@ namespace Microsoft.Extensions.DependencyInjection
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services) 
         {
+            services.AddScoped<IUserService, UserService>();
+
             return services;
         }
     }
