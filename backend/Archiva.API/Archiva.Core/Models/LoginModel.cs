@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Archiva.Core.Constants;
+using System.ComponentModel.DataAnnotations;
 
 namespace Archiva.Core.Models
 {
