@@ -1,4 +1,4 @@
-﻿namespace Archiva.Core.Models.User
+﻿namespace Archiva.Core.Models
 {
     /// <summary>
     /// Model for user information
