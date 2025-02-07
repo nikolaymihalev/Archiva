@@ -1,5 +1,4 @@
 ﻿using Archiva.Core.Models;
-using Archiva.Core.Models.User;
 
 namespace Archiva.Core.Conracts;
 
