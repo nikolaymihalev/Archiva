@@ -29,7 +29,7 @@ namespace Archiva.API.Controllers
             jwtSettings = _jwtSettings.Value;
         }
 
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> LoginAsync([FromBody] LoginModel model)
         {
             try
@@ -64,7 +64,7 @@ namespace Archiva.API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<IActionResult> RegisterAsync([FromBody] RegisterModel model)
         {
             try
@@ -79,7 +79,7 @@ namespace Archiva.API.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("{userId}")]
         public async Task<IActionResult> GetUserByIdAsync(string userId)
         {
             try

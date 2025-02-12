@@ -11,5 +11,6 @@
         public const string SuccessfullyLoggedIn = "User successfully logged in!";
         public const string SuccessfullyRegistered = "You was successfully registered!";
         public const string Unauthorized = "Unauthorized!";
+        public const string SuccessfulOperation = "Successfully {0} {1}!";
     }
 }
