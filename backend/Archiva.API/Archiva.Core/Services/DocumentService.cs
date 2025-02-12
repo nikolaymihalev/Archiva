@@ -80,6 +80,18 @@ namespace Archiva.Core.Services
             if (document is null)
                 throw new ArgumentException(string.Format(ReturnMessages.DoesntExist, "Document"));
 
+            var user = await repository.GetByIdAsync<User>(userId);
+
+            if (user is null)
+                throw new ArgumentException(string.Format(ReturnMessages.DoesntExist, "User"));
+
+            var userDocument = await repository.AllReadonly<UserDocument>()
+                .Where(x => x.UserId == userId && x.DocumentId == model.Id)
+                .FirstOrDefaultAsync();
+
+            if(userDocument is null)
+                throw new ArgumentException(string.Format(ReturnMessages.DoesntExist, "Document"));
+
             document.Name = model.Name;
             document.Description = model.Description;
             document.Image = model.Image;
