@@ -18,20 +18,36 @@ namespace Archiva.Core.Services
             repository = _repository;
         }
 
-        public async Task AddAsync(DocumentFormModel model)
+        public async Task AddAsync(DocumentFormModel model, string userId)
         {
-            var document = new Document()
-            {
-                Name = model.Name,
-                Image = model.Image,
-                Description = model.Description,
-                IssueDate = model.IssueDate,
-                EndDate = model.EndDate,
-            };
+            var user = await repository.GetByIdAsync<User>(userId);
+
+            if (user is null)
+                throw new ArgumentException(string.Format(ReturnMessages.DoesntExist, "User"));                       
 
             try
             {
+                var document = new Document()
+                {
+                    Name = model.Name,
+                    Image = model.Image,
+                    Description = model.Description,
+                    IssueDate = model.IssueDate,
+                    EndDate = model.EndDate,
+                };
+
                 await repository.AddAsync(document);
+
+                var lastDocument = await repository.AllReadonly<Document>().LastAsync();
+
+                var userDocument = new UserDocument()
+                {
+                    DocumentId = lastDocument.Id + 1,
+                    UserId = user.Id,
+                };
+
+
+                await repository.AddAsync(userDocument);
                 await repository.SaveChangesAsync();
             }
             catch (Exception)
@@ -57,7 +73,7 @@ namespace Archiva.Core.Services
             await repository.SaveChangesAsync();
         }
 
-        public async Task EditAsync(DocumentFormModel model)
+        public async Task EditAsync(DocumentFormModel model, string userId)
         {
             var document = await repository.GetByIdAsync<Document>(model.Id);
 
