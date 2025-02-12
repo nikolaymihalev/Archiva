@@ -8,5 +8,8 @@
         public const string DoesntExist = "{0} doesn't exist!";
         public const string AlreadyExist = "{0} already exists!";
         public const string InvalidPassword = "The password is invalid!";
+        public const string SuccessfullyLoggedIn = "User successfully logged in!";
+        public const string SuccessfullyRegistered = "You was successfully registered!";
+        public const string Unauthorized = "Unauthorized!";
     }
 }
