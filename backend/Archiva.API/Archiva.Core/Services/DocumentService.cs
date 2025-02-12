@@ -130,6 +130,7 @@ namespace Archiva.Core.Services
 
             var userDocumentsIds = await repository.AllReadonly<UserDocument>()
                 .Where(x => x.UserId == userId)
+                .OrderByDescending(x => x.DocumentId)
                 .ToListAsync();
 
             foreach(var item in userDocumentsIds)
